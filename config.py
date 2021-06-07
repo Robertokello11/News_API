@@ -1,9 +1,13 @@
+import os
+
 class Config:
     '''
     General configuration parent class
     '''
-    
-    NEWS_API_BASE_URL ='https://newsapi.org/v2/everything?q=Apple&from=2021-06-07&sortBy=popularity&apiKey=API_KEY={}'
+    NEWS_API_SOURCE_URL='https://newsapi.org/v2/sources?apiKey={}'
+    # CAT_API_URL='https://newsapi.org/v2/everything?q={}&sortBy=relevancy&apiKey={}'
+    NEWS_API_KEY=os.environ.get('NEWS_API_KEY')
+    CAT_API_URL='https://newsapi.org/v2/top-headlines?country=us&category={}&apiKey={}'
 
 
 
@@ -27,3 +31,8 @@ class DevConfig(Config):
     '''
 
     DEBUG = True
+
+config_options = {
+'development':DevConfig,
+'production':ProdConfig
+}

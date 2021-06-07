@@ -1,53 +1,45 @@
-from app import app
-import urllib.request,json
-from .models import news
-
-News = news.News
-
-# Getting api key
-api_key = app.config['NEWS_API_KEY']
-
-# Getting the movie base url
-base_url = app.config["NEWS_API_BASE_URL"]
-
-def get_news(category):
+class Article:
     '''
-    Function that gets the json response to our url request
+    Class that instantiates objects of the news article objects of the news sources
     '''
-    get_news_url = base_url.format(category,api_key)
+    def __init__(self,author,description,time,url,image,title):
+        self.author = author
+        self.description = description
+        self.time = time
+        self.url = url
+        self.image = image
+        self.title = title
 
-    with urllib.request.urlopen(get_news_url) as url:
-        get_news_data = url.read()
-        get_news_response = json.loads(get_news_data)
-
-        news_results = None
-
-        if get_news_response['results']:
-            news_results_list = get_news_response['results']
-            news_results = process_results(news_results_list)
-
-
-    return news_results
-
-def process_results(news_list):
+class Category:
     '''
-    Function  that processes the news result and transform them to a list of Objects
-
-    Args:
-        news_list: dictionaries that contain news details
-
-    Returns :
-        news_results: A list of news objects
+    Class that instantiates objects of the news categories objects of the news sources
     '''
-    news_results = []
-    for news_item in news_list:
-        id = news_item.get('id')
-        name = source_item.get('name')
-        description = source_item.get('description')
-        url = source_item.get('url')       
-       
-    if poster:
-            news_object = Movie(id,name,description,url)
-            news_results.append(news_object)
+    def __init__(self,author,description,time,url,image,title):
+        self.author = author
+        self.description = description
+        self.time = time
+        self.url = url
+        self.image = image
+        self.title = title
 
-    return news_results
+class Source:
+    '''
+    Source class to define source objects
+    '''
+    def __init__(self,id,name,description,url):
+        self.id = id
+        self.name = name
+        self.description = description
+        self.url = url
+
+class Headlines:
+    '''
+    Class that instantiates objects of the headlines categories objects of the news sources
+    '''
+    def __init__(self,author,description,time,url,image,title):
+        self.author = author
+        self.description = description
+        self.time = time
+        self.url = url
+        self.image = image
+        self.title = title

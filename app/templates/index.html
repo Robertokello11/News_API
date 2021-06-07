@@ -11,6 +11,12 @@
         {% endif %}
     </head>
     <body>
-
+  <!-- Popular movie section  -->
+  <h3> Top News</h3>
+  <ul>
+     {% for top_news in top %}
+         <li>{{ top_news.title}}</li>
+     {% endfor %}
+ </ul>
     </body>
 </html>

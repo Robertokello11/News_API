@@ -19,7 +19,11 @@ flask
 
 # Behavior Driven Development
 - The navigation bar upon click redirects the user to the selected choice of news
+
+- In either case the user is using a desktop or phone,so for the navbar it use a drop down at the top right for the bars
+
 - On choosing a news source, it will preview the top news articles of the day.
+
 - Upon clicking a news article it will redirect the user to read it fully from the news source
 
 # Known Bugs

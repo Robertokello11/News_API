@@ -1,5 +1,5 @@
 .main {
-    flex: 1 1 0;
+    flex:content;
     display: flex;
     background-color: aquamarine;
 

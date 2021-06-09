@@ -39,5 +39,5 @@ No bugs noticed
 robertokello443@gmail.com
 
 # License
-This project is under the [MIT] License copyright (c) {2021}
+This project is under the [MIT](License) copyright (c) {2021}
 
